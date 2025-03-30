@@ -27,6 +27,7 @@
   left: 50%;
   transform: translateX(-50%);
   text-align: center;
+  margin: 0 3rem;
 }
 
 .logo-container {
@@ -69,7 +70,7 @@
 
 .nav-links {
   display: flex;
-  gap: 2rem;
+  gap: 3.5rem;
 }
 
 .nav-links.left {
