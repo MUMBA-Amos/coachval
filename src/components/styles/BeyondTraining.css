@@ -1,0 +1,278 @@
+.beyond-training-wrapper {
+  width: 100%;
+  background-color: #000;
+  position: relative;
+  overflow: hidden;
+  min-height: 60vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem 0;
+}
+
+.particles {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.particle {
+  position: absolute;
+  width: 2px;
+  height: 2px;
+  background: rgba(0, 162, 255, 0.15);
+  border-radius: 50%;
+  left: var(--position);
+  animation: float 4s infinite linear;
+  animation-delay: var(--delay);
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(-100%) rotate(0deg);
+    opacity: 0;
+  }
+  50% {
+    opacity: 0.8;
+  }
+  100% {
+    transform: translateY(1000%) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+.beyond-training-section {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+}
+
+.beyond-training-title {
+  text-align: left;
+  margin-bottom: 3rem;
+  position: relative;
+}
+
+.beyond-training-title h2 {
+  color: #00a2ff;
+  font-size: 2.5rem;
+  font-family: 'Jacques Francois', serif;
+  margin: 0;
+  display: inline-block;
+  border-bottom: 3px solid #00a2ff;
+  padding-bottom: 10px;
+}
+
+.beyond-training-title .header-line {
+  display: none;
+}
+
+.beyond-training-content {
+  display: grid;
+  grid-template-columns: 400px 1fr;
+  gap: 3rem;
+  align-items: center;
+}
+
+.beyond-training-image {
+  position: relative;
+  border-radius: 30px;
+  overflow: hidden;
+  height: 350px;
+  box-shadow: 0 10px 30px rgba(0, 162, 255, 0.15);
+  transform: perspective(1000px) rotateY(-5deg);
+  transition: transform 0.5s ease;
+}
+
+.beyond-training-image:hover {
+  transform: perspective(1000px) rotateY(0deg);
+}
+
+.image-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(45deg, rgba(0, 162, 255, 0.2), transparent);
+}
+
+.training-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  transition: transform 0.5s ease;
+}
+
+.interests-section {
+  padding-left: 2rem;
+}
+
+.interests-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+}
+
+.interest-item {
+  background: rgba(0, 162, 255, 0.03);
+  border-radius: 20px;
+  padding: 1.5rem;
+  transition: all 0.3s ease;
+  border: 1px solid rgba(0, 162, 255, 0.1);
+  position: relative;
+  overflow: hidden;
+}
+
+.interest-item::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(45deg, rgba(0, 162, 255, 0.1), transparent);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.interest-item:hover {
+  transform: translateY(-5px);
+  border-color: rgba(0, 162, 255, 0.3);
+}
+
+.interest-item:hover::before {
+  opacity: 1;
+}
+
+.interest-icon-wrapper {
+  width: 60px;
+  height: 60px;
+  background: rgba(0, 162, 255, 0.1);
+  border-radius: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+  transition: all 0.3s ease;
+}
+
+.interest-icon {
+  font-size: 1.8rem;
+  color: #00a2ff;
+  transition: all 0.3s ease;
+}
+
+.interest-item:hover .interest-icon-wrapper {
+  background: rgba(0, 162, 255, 0.2);
+  transform: rotate(10deg);
+}
+
+.interest-content {
+  text-align: left;
+}
+
+.interest-content h4 {
+  color: #00a2ff;
+  font-size: 1.4rem;
+  margin: 0 0 1rem;
+  font-family: 'Jacques Francois', serif;
+  letter-spacing: 0.5px;
+}
+
+.interest-content p {
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 0.95rem;
+  line-height: 1.7;
+  margin: 0;
+  font-family: 'Jacques Francois', serif;
+}
+
+@media screen and (max-width: 1200px) {
+  .beyond-training-content {
+    grid-template-columns: 350px 1fr;
+    gap: 3rem;
+  }
+
+  .beyond-training-title h2 {
+    font-size: 1rem;
+  }
+
+  .interests-grid {
+    gap: 1.5rem;
+  }
+
+  .interest-item {
+    padding: 1.5rem;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .beyond-training-content {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+
+  .beyond-training-image {
+    max-width: 400px;
+    margin: 0 auto;
+    transform: none;
+  }
+
+  .interests-section {
+    padding-left: 0;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .beyond-training-wrapper {
+    padding: 2rem 1rem;
+    min-height: 50vh;
+  }
+
+  .beyond-training-title {
+    margin-bottom: 2rem;
+  }
+
+  .interests-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .interest-item {
+    padding: 1.5rem;
+  }
+
+  .interest-content h4 {
+    font-size: 1.2rem;
+  }
+
+  .beyond-training-image {
+    height: 300px;
+  }
+
+  .beyond-training-title h2 {
+    font-size: 1rem;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .beyond-training-image {
+    height: 250px;
+  }
+
+  .interest-item {
+    padding: 1.2rem;
+  }
+
+  .beyond-training-title h2 {
+    font-size: 2rem;
+  }
+} 

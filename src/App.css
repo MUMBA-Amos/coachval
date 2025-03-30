@@ -36,3 +36,18 @@
     transform: rotate(360deg);
   }
 }
+
+.app-container {
+  width: 100%;
+  min-height: 100vh;
+  background-color: #000;
+  display: flex;
+  justify-content: center;
+}
+
+.app-content {
+  width: 90%;
+  max-width: 1920px;
+  margin: 0 auto;
+  position: relative;
+}

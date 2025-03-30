@@ -1,0 +1,254 @@
+@import url('https://fonts.googleapis.com/css2?family=Jacques+Francois&display=swap');
+
+.services {
+  padding: 40px 0 100px;
+  background-color: black;
+  min-height: 100vh;
+  position: relative;
+  overflow: hidden;
+}
+
+.services-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  position: relative;
+  z-index: 1;
+}
+
+/* Header Styles */
+.section-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  margin-bottom: 4rem;
+  position: relative;
+  opacity: 0;
+}
+
+.header-line {
+  height: 2px;
+  width: 100px;
+  background: linear-gradient(90deg, transparent, #00a2ff, transparent);
+  transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.section-header:hover .header-line {
+  width: 150px;
+}
+
+.section-title {
+  font-family: 'Jacques Francois', serif;
+  color: white;
+  text-align: center;
+  font-size: 2.5rem;
+  letter-spacing: 2px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  text-shadow: 0 0 10px rgba(0, 162, 255, 0.5);
+}
+
+.section-title:hover {
+  letter-spacing: 4px;
+  color: #00a2ff;
+}
+
+/* Services Grid */
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  padding: 2rem 0;
+}
+
+.service-box {
+  background: rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(0, 162, 255, 0.3);
+  border-radius: 15px;
+  padding: 2rem;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  opacity: 0;
+}
+
+.service-box:hover {
+  transform: translateY(-10px);
+  border-color: #00a2ff;
+  background: rgba(0, 162, 255, 0.1);
+  box-shadow: 0 10px 30px rgba(0, 162, 255, 0.2);
+}
+
+.service-box-content {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 1rem;
+}
+
+.service-icon {
+  font-size: 2.5rem;
+  color: #00a2ff;
+  transition: all 0.3s ease;
+}
+
+.service-box:hover .service-icon {
+  transform: scale(1.1);
+  color: white;
+}
+
+.service-box h3 {
+  font-family: 'Jacques Francois', serif;
+  color: #00a2ff;
+  font-size: 1.5rem;
+  margin: 0;
+  transition: color 0.3s ease;
+}
+
+.service-box:hover h3 {
+  color: white;
+}
+
+.service-box p {
+  font-family: 'Jacques Francois', serif;
+  color: white;
+  opacity: 0.9;
+  line-height: 1.6;
+  margin: 0;
+  font-size: 1rem;
+}
+
+.service-box-glow {
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(0, 162, 255, 0.2),
+    transparent
+  );
+  transition: 0.5s;
+}
+
+.service-box:hover .service-box-glow {
+  left: 100%;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { 
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to { 
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in {
+  animation: fadeIn 1s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+.fade-in-up {
+  animation: fadeIn 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+/* Particles */
+.particles {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+}
+
+.particle {
+  position: absolute;
+  width: 2px;
+  height: 2px;
+  background: #00a2ff;
+  border-radius: 50%;
+  animation: floatParticle 4s infinite;
+  animation-delay: var(--delay);
+  left: var(--position);
+  opacity: 0;
+}
+
+@keyframes floatParticle {
+  0% {
+    transform: translateY(100vh) scale(0);
+    opacity: 0;
+  }
+  50% {
+    opacity: 0.8;
+  }
+  100% {
+    transform: translateY(-100px) scale(1);
+    opacity: 0;
+  }
+}
+
+/* Responsive Design */
+@media screen and (max-width: 1200px) {
+  .services-grid {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .section-title {
+    font-size: 2rem;
+  }
+
+  .header-line {
+    width: 60px;
+  }
+
+  .service-box {
+    padding: 1.5rem;
+  }
+
+  .service-icon {
+    font-size: 2rem;
+  }
+
+  .service-box h3 {
+    font-size: 1.3rem;
+  }
+
+  .service-box p {
+    font-size: 0.9rem;
+    line-height: 1.5;
+  }
+
+  .particles {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .services-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .service-box {
+    padding: 1.2rem;
+  }
+
+  .service-icon {
+    font-size: 1.8rem;
+  }
+
+  .service-box h3 {
+    font-size: 1.2rem;
+  }
+} 
