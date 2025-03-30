@@ -56,14 +56,14 @@ const Testimonials = () => {
       image: caroleImage
     },
     {
-      name: "Nor",
+      name: "Airen",
       role: "Fat Loss & Body Toning Client",
       text: "Coach Valo's fat loss and body toning program has been exactly what I needed. His comprehensive approach to training and nutrition helped me achieve a lean, toned physique. The results exceeded my expectations, and I feel more confident than ever.",
       rating: 5,
       image: norImage
     },
     {
-      name: "Thomson",
+      name: "Billy",
       role: "Weight Loss, Strength & Hypertrophy Client",
       text: "Coach Valo's comprehensive program combining weight loss, strength training, and hypertrophy has been exceptional. His expertise in all three areas helped me achieve a complete transformation. The balanced approach to training and nutrition delivered outstanding results.",
       rating: 5,

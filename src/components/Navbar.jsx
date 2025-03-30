@@ -68,6 +68,54 @@ const Navbar = () => {
   return (
     <nav className="navbar">
       <div className="navbar-container">
+        <div className={`nav-links-container ${isMenuOpen ? 'active' : ''}`}>
+          <div className="nav-links left">
+            <a 
+              href="#home" 
+              className={`nav-link ${activeSection === 'home' ? 'active' : ''}`}
+              onClick={(e) => {
+                e.preventDefault();
+                scrollToSection('home');
+              }}
+            >
+              Home
+            </a>
+            <a 
+              href="#about" 
+              className={`nav-link ${activeSection === 'about' ? 'active' : ''}`}
+              onClick={(e) => {
+                e.preventDefault();
+                scrollToSection('about');
+              }}
+            >
+              About
+            </a>
+          </div>
+
+          <div className="nav-links right">
+            <a 
+              href="#testimonials" 
+              className={`nav-link ${activeSection === 'testimonials' ? 'active' : ''}`}
+              onClick={(e) => {
+                e.preventDefault();
+                scrollToSection('testimonials');
+              }}
+            >
+              Testimonials
+            </a>
+            <a 
+              href="#services" 
+              className={`nav-link ${activeSection === 'services' ? 'active' : ''}`}
+              onClick={(e) => {
+                e.preventDefault();
+                scrollToSection('services');
+              }}
+            >
+              Services
+            </a>
+          </div>
+        </div>
+
         <div className="nav-logo">
           <div className="logo-container">
             <div className="arrow-line">
@@ -77,49 +125,6 @@ const Navbar = () => {
             </div>
             <h1>COACH VALO FITNESS</h1>
           </div>
-        </div>
-
-        <div className={`nav-links-container ${isMenuOpen ? 'active' : ''}`}>
-          <a 
-            href="#home" 
-            className={`nav-link ${activeSection === 'home' ? 'active' : ''}`}
-            onClick={(e) => {
-              e.preventDefault();
-              scrollToSection('home');
-            }}
-          >
-            Home
-          </a>
-          <a 
-            href="#about" 
-            className={`nav-link ${activeSection === 'about' ? 'active' : ''}`}
-            onClick={(e) => {
-              e.preventDefault();
-              scrollToSection('about');
-            }}
-          >
-            About
-          </a>
-          <a 
-            href="#testimonials" 
-            className={`nav-link ${activeSection === 'testimonials' ? 'active' : ''}`}
-            onClick={(e) => {
-              e.preventDefault();
-              scrollToSection('testimonials');
-            }}
-          >
-            Testimonials
-          </a>
-          <a 
-            href="#services" 
-            className={`nav-link ${activeSection === 'services' ? 'active' : ''}`}
-            onClick={(e) => {
-              e.preventDefault();
-              scrollToSection('services');
-            }}
-          >
-            Services
-          </a>
         </div>
 
         <div className={`hamburger ${isMenuOpen ? 'open' : ''}`} onClick={toggleMenu}>
