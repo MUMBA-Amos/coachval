@@ -25,10 +25,10 @@
 
 .nav-logo {
   position: absolute;
-  left: 50%;
+  left: 48%;
   transform: translateX(-50%);
   text-align: center;
-  margin: 0 3rem;
+  margin: 0 3rem 0 1rem;
 }
 
 .logo-container {
