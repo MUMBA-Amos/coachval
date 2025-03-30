@@ -68,7 +68,18 @@ const Navbar = () => {
   return (
     <nav className="navbar">
       <div className="navbar-container">
-        <div className={`nav-links left ${isMenuOpen ? 'active' : ''}`}>
+        <div className="nav-logo">
+          <div className="logo-container">
+            <div className="arrow-line">
+              <span className="arrow-head left">←</span>
+              <span className="line"></span>
+              <span className="arrow-head right">→</span>
+            </div>
+            <h1>COACH VALO FITNESS</h1>
+          </div>
+        </div>
+
+        <div className={`nav-links-container ${isMenuOpen ? 'active' : ''}`}>
           <a 
             href="#home" 
             className={`nav-link ${activeSection === 'home' ? 'active' : ''}`}
@@ -89,30 +100,6 @@ const Navbar = () => {
           >
             About
           </a>
-        </div>
-        
-        <div className="nav-logo">
-          <div className="logo-container">
-            <div className="arrow-line">
-              <span className="arrow-head left">←</span>
-              <span className="line"></span>
-              <span className="arrow-head right">→</span>
-            </div>
-            <h1>COACH VALO FITNESS</h1>
-          </div>
-        </div>
-
-        <div className={`nav-links right ${isMenuOpen ? 'active' : ''}`}>
-          {/* <a 
-            href="#achievements" 
-            className={`nav-link ${activeSection === 'achievements' ? 'active' : ''}`}
-            onClick={(e) => {
-              e.preventDefault();
-              scrollToSection('achievements');
-            }}
-          >
-            Achievements
-          </a> */}
           <a 
             href="#testimonials" 
             className={`nav-link ${activeSection === 'testimonials' ? 'active' : ''}`}
