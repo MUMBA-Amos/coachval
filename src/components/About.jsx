@@ -37,7 +37,7 @@ const About = () => {
       const progress = frame / totalFrames;
       
       setAnimatedNumbers({
-        years: Math.min(Math.ceil(5 * progress), 5),
+        years: Math.min(Math.ceil(7 * progress), 7),
         clients: Math.min(Math.ceil(100 * progress), 100)
       });
 
@@ -70,7 +70,7 @@ const About = () => {
           </div>
           <div className="certification-item">
             <FaStar className="cert-icon" />
-            <span>Nutrition Specialist</span>
+            <span>Nutrition Coach</span>
           </div>
         </div>
         
